@@ -23,7 +23,6 @@ export const registerMovieSchema = z.object({
       invalid_type_error: 'O campo "description" deve ser uma string.',
     })
     .min(1, 'O campo "description" não pode estar vazio.')
-    .max(100, 'O campo "title" deve ter no máximo 100 caracteres.')
     .refine((val) => val.trim().length > 0, {
       message: 'O campo "description" não pode conter apenas espaços.',
     })
