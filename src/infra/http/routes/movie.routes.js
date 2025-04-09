@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { authenticate } from '../middlewares/auth.js';
 
 import {
   createMovie,
@@ -9,6 +10,8 @@ import {
 } from '../controllers/movie.controller.js';
 
 const movieRoutes = Router();
+
+movieRoutes.use(authenticate); 
 
 movieRoutes.post('/', createMovie);
 movieRoutes.get('/', getAllMovies);
