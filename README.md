@@ -95,14 +95,16 @@ npm run test
 
 ---
 
-## 👮 Usuário admin
+## 🔐 Autenticação e Headers obrigatórios
 
-Já existe um usuário admin criado no banco com as credenciais definidas no `.env`:
+Para realizar **requisições POST e PUT**, é necessário configurar os seguintes **headers**:
 
-```text
-Email: admin@synoro.com
-Senha: synoro8080
-```
+#### Headers obrigatórios:
+
+| header         | value                         | Descrição                                     |
+|----------------|-------------------------------|-----------------------------------------------|
+| Content-Type   | `application/json`            | Indica que o corpo da requisição está em JSON |
+| Authorization  | `Bearer <seu_token_aqui>`     | Token JWT de autenticação                     |
 
 ---
 
