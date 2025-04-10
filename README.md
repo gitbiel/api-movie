@@ -66,7 +66,7 @@ A aplicação estará disponível em: [http://localhost:3333]
 
 ---
 
-## 🧾 Documentação da API
+### 6. 🧾 Documentação da API
 
 A documentação da API pode ser gerada com o seguinte comando:
 
@@ -85,7 +85,7 @@ Esse comando sobe um servidor local para servir a documentação, geralmente ace
 
 ---
 
-## 🧪 Testes
+### 7. 🧪 Testes
 
 Execute os testes com:
 
@@ -95,7 +95,7 @@ npm run test
 
 ---
 
-## 🔐 Autenticação e Headers obrigatórios
+### 8. 🔐 Autenticação e Headers obrigatórios
 
 Para realizar **requisições POST e PUT**, é necessário configurar os seguintes **headers**:
 
