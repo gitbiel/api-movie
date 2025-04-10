@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/infra/server.js",
-    "test": "vitest"
+    "test": "vitest",
+    "docs": "npx apidoc -i src",
+    "docs:serve": "npx serve apidoc"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +24,7 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "apidoc": "^1.2.0",
     "nodemon": "^3.1.9",
     "supertest": "^7.1.0",
     "vitest": "^3.1.1"
