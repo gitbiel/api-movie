@@ -3,7 +3,6 @@ import bcrypt from 'bcryptjs';
 import { UserModel } from '../../database/mongoose/schemas/user.schema.js';
 
 export async function login(req, res) {
-
   const { email, password } = req.body;
 
   try {
@@ -22,7 +21,7 @@ export async function login(req, res) {
     const token = jwt.sign(
       { sub: user._id.toString(), email: user.email },
       process.env.JWT_SECRET,
-      { expiresIn: '1h' }
+      { expiresIn: '7d' }
     );
 
     return res.json({ token });
@@ -31,4 +30,3 @@ export async function login(req, res) {
     return res.status(500).json({ error: 'Erro interno no servidor' });
   }
 }
-

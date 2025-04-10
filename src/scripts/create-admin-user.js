@@ -11,20 +11,22 @@ async function createAdminUser() {
 
   const existingUser = await UserModel.findOne({ email });
 
-  if (existingUser) {
-    console.log('⚠️  Usuário admin já existe.');
-    process.exit(0);
-  }
-
   const hashedPassword = await bcrypt.hash(password, 10);
 
-  const user = new UserModel({
-    email,
-    password: hashedPassword,
-  });
+  if (existingUser) {
+    existingUser.password = hashedPassword;
+    await existingUser.save();
+    console.log('Admin existente — senha atualizada.');
+  } else {
+    const user = new UserModel({
+      email,
+      password: hashedPassword,
+    });
 
-  await user.save();
-  console.log('✅ Usuário admin criado com sucesso!');
+    await user.save();
+    console.log('✅ Usuário admin criado com sucesso!');
+  }
+
   process.exit(0);
 }
 

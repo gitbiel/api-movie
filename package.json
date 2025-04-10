@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/infra/server.js",
     "test": "vitest",
-    "docs": "npx apidoc -i src",
+    "docs": "npx apidoc -i src -o apidoc",
     "docs:serve": "npx serve apidoc"
   },
   "keywords": [],
