@@ -50,8 +50,7 @@ docker-compose up --build
 
 Isso irá:
 
-Subir o MongoDB em um container
-Subir a aplicação Node.js
+Subir o MongoDB em um container e subir a aplicação Node.js
 
 ### 4. Criar usuário admin
 
@@ -100,6 +99,7 @@ npm run test
 Todos os endpoints em `/api/movies` exigem autenticação via **JWT**.
 
 Para obter um token de acesso, consulte o endpoint de login/documentação da API.
+As credenciais estão no arquivo .env.example ou .env que você gerou
 
 > **Importante:** exceto o endpoint de login, **todas as rotas do CRUD** exigem o seguinte header:
 
