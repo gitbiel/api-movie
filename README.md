@@ -2,7 +2,7 @@
 
 Uma API RESTful para gerenciamento de filmes, com autenticação JWT, integração com a OMDb API e documentação automática.
 
-## 🚀 Tecnologias utilizadas
+##  Tecnologias utilizadas
 
 - Node.js
 - Express
@@ -14,9 +14,9 @@ Uma API RESTful para gerenciamento de filmes, com autenticação JWT, integraç�
 - Vitest (testes)
 - API Doc
 
-## 🧪 Como rodar o projeto localmente
+###  Como rodar o projeto localmente
 
-### ✅ Pré-requisitos
+##  Pré-requisitos
 
 - [Node.js]
   Recomenda-se utilizar a versão `v20.16.0`. Você pode instalá-la com [nvm](https://github.com/nvm-sh/nvm):
@@ -66,7 +66,7 @@ A aplicação estará disponível em: [http://localhost:3333]
 
 ---
 
-### 6. 🧾 Documentação da API
+### 6. Documentação da API
 
 A documentação da API pode ser gerada com o seguinte comando:
 
@@ -85,7 +85,7 @@ Esse comando sobe um servidor local para servir a documentação, geralmente ace
 
 ---
 
-### 7. 🧪 Testes
+### 7. Testes
 
 Execute os testes com:
 
@@ -95,24 +95,36 @@ npm run test
 
 ---
 
-### 8. 🔐 Autenticação e Headers obrigatórios
+### 8. Autenticação e Headers obrigatórios
 
-Para realizar **requisições POST e PUT**, é necessário configurar os seguintes **headers**:
+#### Autenticação (JWT)
 
-#### Headers obrigatórios:
+Todos os endpoints em `/api/movies` exigem autenticação via **JWT**.
 
-| header         | value                         | Descrição                                     |
-|----------------|-------------------------------|-----------------------------------------------|
-| Content-Type   | `application/json`            | Indica que o corpo da requisição está em JSON |
-| Authorization  | `Bearer <seu_token_aqui>`     | Token JWT de autenticação                     |
+Para obter um token de acesso, consulte o endpoint de login/documentação da API.
+
+> **Importante:** exceto o endpoint de login, **todas as rotas do CRUD** exigem o seguinte header:
+
+| Header        | Value                      | Descrição                     |
+|---------------|----------------------------|-------------------------------|
+| Authorization | `Bearer <seu_token_aqui>`  | Token JWT de autenticação     |
+
+---
+
+#### Content-Type para POST e PUT
+
+As requisições **POST** e **PUT** devem incluir o seguinte header:
+
+| Header        | Value                | Descrição                                     |
+|---------------|----------------------|-----------------------------------------------|
+| Content-Type  | `application/json`   | Indica que o corpo da requisição está em JSON |
 
 ---
 
-## 📌 Observações
+### 📌 Observações
 
-- Todos os endpoints em /api/movies exigem autenticação JWT. Para obter um token, consulte a documentação da API.
-- A OMDb API é utilizada para enriquecer os dados dos filmes com informações públicas.
+- A **OMDb API** é utilizada para enriquecer os dados dos filmes com informações públicas.
+- Certifique-se de incluir os headers corretos para evitar erros de autenticação ou de conteúdo.
 
----
 
 Feito por Gabriel Mendes 💻
