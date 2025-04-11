@@ -10,12 +10,13 @@ export function authenticate(req, res, next) {
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const userIdDecoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    req.user = decoded;
+    req.userId = userIdDecoded; 
     next();
   } catch (err) {
     console.error('Erro ao verificar o token:', err);
     return res.status(403).json({ error: 'Token inválido ou expirado' });
   }
 }
+
