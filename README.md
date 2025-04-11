@@ -24,7 +24,7 @@ Uma API RESTful para gerenciamento de filmes, com autenticação JWT, integraç�
   ```
   nvm install 20.16.0
   nvm use 20.16.0
-
+  ```
 
 - [Docker](https://www.docker.com/)
   Versão recomendada: 24.0.7
@@ -69,7 +69,7 @@ node src/scripts/create-admin-user.js
 npm start
 ```
 
-A aplicação estará disponível em: [http://localhost:3333]
+A aplicação estará disponível em: [http://localhost:3333](http://localhost:3333)
 
 ---
 
