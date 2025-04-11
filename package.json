@@ -9,7 +9,7 @@
     "test": "vitest",
     "docs": "npx apidoc -i src -o apidoc",
     "docs:serve": "npx serve apidoc",
-    "create-admin": "node src/scripts/create-admin-user.js"
+    "create:admin": "node src/scripts/create-admin-user.js"
   },
   "keywords": [],
   "author": "",

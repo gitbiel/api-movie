@@ -38,42 +38,34 @@ git clone https://github.com/gitbiel/movie-api
 cd movie-api
 ```
 
-### 2. Instale as dependências
-
-```
-npm install
-```
-
-### 3. Configure o `.env`
+### 2. Configure o `.env`
 
 Crie um arquivo .env na raiz do projeto com base no arquivo .env.example.
 
-### 4. Suba o MongoDB com Docker
+### 3. Suba a aplicação com Docker
 
 ```
-docker-compose up -d
+docker-compose up --build
 ```
 
-Isso irá criar um container com MongoDB rodando na porta padrão `27017`.
+Isso irá:
 
-### 5. Criar usuário admin
+Subir o MongoDB em um container
+Subir a aplicação Node.js
 
-Após configurar o `.env` e garantir que o MongoDB está rodando, execute o script abaixo para criar o usuário administrador:
-```
-node src/scripts/create-admin-user.js
-```
+### 4. Criar usuário admin
 
-### 6. Rode o projeto
+Após configurar o `.env` e garantir que a aplicação está rodando, execute o script abaixo para criar o usuário administrador:
 
 ```
-npm start
+docker exec -it node-api npm run create:admin
 ```
 
 A aplicação estará disponível em: [http://localhost:3333](http://localhost:3333)
 
 ---
 
-### 7. Documentação da API
+### 5. Documentação da API
 
 A documentação da API pode ser gerada com o seguinte comando:
 
@@ -91,7 +83,7 @@ Esse comando sobe um servidor local para servir a documentação, geralmente ace
 
 ---
 
-### 8. Testes
+### 6. Testes
 
 Execute os testes com:
 
@@ -101,7 +93,7 @@ npm run test
 
 ---
 
-### 9. Autenticação e Headers obrigatórios
+### 7. Autenticação e Headers obrigatórios
 
 #### Autenticação (JWT)
 
