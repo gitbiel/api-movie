@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { ListMoviesUseCase } from './list-movies.usecase';
+import { ListAllMoviesUseCase } from './list-all-movies.usecase';
 import { InMemoryMovieRepository } from '../../repositories/in-memory-movie.repository';
 
-describe('ListMoviesUseCase', () => {
+describe('ListAllMoviesUseCase', () => {
   it('deve listar todos os filmes cadastrados', async () => {
     const repository = new InMemoryMovieRepository();
 
@@ -11,14 +11,14 @@ describe('ListMoviesUseCase', () => {
       description: 'Exploração espacial',
       releaseYear: 2014,
     });
+
     await repository.create({
       title: 'Oppenheimer',
       description: 'Criador da bomba atômica',
       releaseYear: 2023,
     });
 
-    const useCase = new ListMoviesUseCase(repository);
-
+    const useCase = new ListAllMoviesUseCase(repository);
     const result = await useCase.execute();
 
     expect(result).toHaveLength(2);

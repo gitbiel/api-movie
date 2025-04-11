@@ -3,7 +3,8 @@ import { updateMovieSchema } from './dto/update-movies.schema.js';
 import { formatZodErrors } from '../../../core/errors/format-zod-errors.js';
 
 import { makeRegisterMovieUseCase } from '../../factories/register-movies.factory.js';
-import { makeListMoviesUseCase } from '../../factories/list-movies.factory.js';
+import { makeListAllMoviesUseCase } from '../../factories/list-all-movies.factory.js';
+import { makeGetMovieDetailsUseCase } from '../../factories/get-movie-details.factory.js';
 import { makeDeleteMovieUseCase } from '../../../infra/factories/delete-movies.factory.js';
 import { makeUpdateMovieUseCase } from '../../factories/update-movies.factory.js';
 
@@ -31,7 +32,7 @@ export async function createMovie(req, res) {
 
 export async function getAllMovies(_req, res) {
   try {
-    const useCase = makeListMoviesUseCase();
+    const useCase = makeListAllMoviesUseCase();
     const movies = await useCase.execute();
     return res.status(200).json(movies);
   } catch (err) {
@@ -43,7 +44,7 @@ export async function getAllMovies(_req, res) {
 export async function getMovieById(req, res) {
   try {
     const { id } = req.params;
-    const useCase = makeListMoviesUseCase();
+    const useCase = makeGetMovieDetailsUseCase();
     const movie = await useCase.execute(id);
     return res.status(200).json(movie);
   } catch (err) {
@@ -51,6 +52,7 @@ export async function getMovieById(req, res) {
     return res.status(404).json({ error: err.message });
   }
 }
+
 
 export async function updateMovie(req, res) {
   try {
