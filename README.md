@@ -34,11 +34,21 @@ Uma API RESTful para gerenciamento de filmes, com autenticação JWT, integraç�
 ### 1. Clone o repositório
 
 ```
-git clone https://github.com/seu-usuario/movie-api.git
+git clone https://github.com/gitbiel/movie-api
 cd movie-api
 ```
 
-### 2. Suba o MongoDB com Docker
+### 2. Instale as dependências
+
+```
+npm install
+```
+
+### 3. Configure o `.env`
+
+Crie um arquivo .env na raiz do projeto com base no arquivo .env.example.
+
+### 4. Suba o MongoDB com Docker
 
 ```
 docker-compose up -d
@@ -46,17 +56,14 @@ docker-compose up -d
 
 Isso irá criar um container com MongoDB rodando na porta padrão `27017`.
 
-### 3. Instale as dependências
+### 5. Criar usuário admin
 
+Após configurar o `.env` e garantir que o MongoDB está rodando, execute o script abaixo para criar o usuário administrador:
 ```
-npm install
+node src/scripts/create-admin-user.js
 ```
 
-### 4. Configure o `.env`
-
-Crie um arquivo .env na raiz do projeto com base no arquivo .env.example.
-
-### 5. Rode o projeto
+### 6. Rode o projeto
 
 ```
 npm run dev
@@ -66,7 +73,7 @@ A aplicação estará disponível em: [http://localhost:3333]
 
 ---
 
-### 6. Documentação da API
+### 7. Documentação da API
 
 A documentação da API pode ser gerada com o seguinte comando:
 
@@ -82,10 +89,9 @@ npm run docs:serve
 
 Esse comando sobe um servidor local para servir a documentação, geralmente acessível em `http://localhost:3000`.
 
-
 ---
 
-### 7. Testes
+### 8. Testes
 
 Execute os testes com:
 
@@ -95,7 +101,7 @@ npm run test
 
 ---
 
-### 8. Autenticação e Headers obrigatórios
+### 9. Autenticação e Headers obrigatórios
 
 #### Autenticação (JWT)
 
