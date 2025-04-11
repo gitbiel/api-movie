@@ -66,7 +66,7 @@ node src/scripts/create-admin-user.js
 ### 6. Rode o projeto
 
 ```
-npm run dev
+npm start
 ```
 
 A aplicação estará disponível em: [http://localhost:3333]

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/infra/server.js",
+    "start": "node src/infra/server.js",
     "test": "vitest",
     "docs": "npx apidoc -i src -o apidoc",
     "docs:serve": "npx serve apidoc"
